@@ -11,8 +11,9 @@ public class PayrollCalculator {
         double hoursWorked = read.nextDouble();
         System.out.println("What is your pay rate?");
         double payRate = read.nextDouble();
-
+        // double grossPay;	Declare a variable
         double grossPay;
+        // double grossPay = 0;	Declare and initialize to zero
         double overtimePay = 0;
 
         System.out.println("Your name is " + name + ".");
@@ -27,8 +28,10 @@ public class PayrollCalculator {
 
             System.out.printf("Overtime Pay: $%.2f%n", overtimePay);
         } else {
+            //grossPay = hoursWorked * payRate;	Assign a value to an existing variable
             grossPay = hoursWorked * payRate;
         }
+        // System.out.println(grossPay);	Display the variable's value
         System.out.printf("Gross Pay: $%.2f%n", grossPay);
 
 
