@@ -12,11 +12,23 @@ public class PayrollCalculator {
         System.out.println("What is your pay rate?");
         double payRate = read.nextDouble();
 
-        double grossPay = hoursWorked * payRate;
+        double grossPay;
+        double overtimePay = 0;
 
         System.out.println("Your name is " + name + ".");
         System.out.println("You have worked " + hoursWorked + " hours this week.");
         System.out.println("Your pay rate is $" + payRate + " an hour.");
+//        System.out.printf("Gross Pay: $%.2f%n", grossPay);
+
+        if (hoursWorked > 40) {
+            double overtimeHours = hoursWorked - 40;
+            overtimePay = overtimeHours * payRate * 1.5;
+            grossPay = (40 * payRate) + overtimePay;
+
+            System.out.printf("Overtime Pay: $%.2f%n", overtimePay);
+        } else {
+            grossPay = hoursWorked * payRate;
+        }
         System.out.printf("Gross Pay: $%.2f%n", grossPay);
 
 
